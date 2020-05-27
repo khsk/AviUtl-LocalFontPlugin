@@ -1,0 +1,1 @@
+"c++.exe" ../../localfont.cpp -o ../../localfont.aul -static -lstdc++ -lgcc -lwinpthread -shared -mwindows -lshlwapi
