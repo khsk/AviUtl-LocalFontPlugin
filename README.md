@@ -3,6 +3,8 @@ AviUtlのFontsディレクトリ内のフォントを一時的に追加するプ
 
 # Install
 
+[Get a aul](https://github.com/khsk/AviUtl-LocalFontPlugin/releases)
+
 ```:AviUtlフォルダ構造例
 │  aviutl.exe
 ├─Fonts
