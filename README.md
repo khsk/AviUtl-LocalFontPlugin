@@ -1,0 +1,2 @@
+# AviUtl-LocalFontPlugin
+AviUtlのFontsディレクトリ内のフォントを一時的に追加するプラグイン
