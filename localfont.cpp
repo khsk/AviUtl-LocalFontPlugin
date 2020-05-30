@@ -21,10 +21,14 @@ bool setFontFiles(std::string folderPath)
     /* 指定のディレクトリ以下のファイル名をファイルがなくなるまで取得する */
     do {
         if (win32fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
-            /* ディレクトリの場合は何もしない */
+            /* ディレクトリの場合は再帰探索 */
+            std::string subFolderPath = win32fd.cFileName;
+            if ((subFolderPath != ".") && (subFolderPath != "..")) {
+                setFontFiles(folderPath + "/" + subFolderPath);
+            }
         }
         else {
-            std::string fontpath_s = std::string(FONTS_DIR) + "/" + win32fd.cFileName;
+            std::string fontpath_s = std::string(folderPath) + "/" + win32fd.cFileName;
             LPCSTR fontpath = fontpath_s.c_str();
             // MessageBox(NULL, fontpath,NULL, MB_OK);
             // フォント以外も追加しようとするが無効なのでフィルターより全投げ
